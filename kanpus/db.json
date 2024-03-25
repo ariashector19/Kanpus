@@ -1,0 +1,58 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Extraer estilo de list en componente",
+      "list": "todo"
+    },
+    {
+      "id": 2,
+      "title": "Comunicar app con backend simulado",
+      "list": "todo"
+    },
+    {
+      "id": 3,
+      "title": "Desplegar aplicación",
+      "list": "todo"
+    },
+    {
+      "id": 4,
+      "title": "Gestión de estado con Redux",
+      "list": "doing"
+    },
+    {
+      "id": 5,
+      "title": "Slice board con varias lists de tasks",
+      "list": "doing"
+    },
+    {
+      "id": 6,
+      "title": "Componentes para mostrar tasks",
+      "list": "done"
+    },
+    {
+      "id": 7,
+      "title": "Acciones para añadir y eliminar tasks",
+      "list": "done"
+    },
+    {
+      "id": 8,
+      "title": "Componente Botón independiente",
+      "list": "done"
+    }
+  ],
+  "board": [
+    {
+      "id": "todo",
+      "name": "Pendiente"
+    },
+    {
+      "id": "doing",
+      "name": "En proceso"
+    },
+    {
+      "id": "done",
+      "name": "Completado"
+    }
+  ]
+}

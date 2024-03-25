@@ -1,0 +1,34 @@
+li {
+  list-style-type: none;
+  padding: 0.5rem 0.5rem;
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  align-items: center;
+}
+li:not(:last-child) {
+  border-bottom: 1px solid #707a7c;
+}
+
+li > label {
+  padding: 0.2rem 0.5rem;
+  margin: 0 0.5rem 0 0;
+  border-radius: 2rem;
+}
+li > button {
+  padding: 0.2rem 0.5rem;
+  margin: 0 0 0 0.5rem;
+  background-color: #3c3b3d;
+  border-radius: 2rem;
+  color: #d0d0d0;
+}
+
+li.done {
+  color: #aaa;
+}
+li.done > label {
+  background-color: #07671f;
+}
+
+li.todo > label {
+  background-color: #67073a;
+}

@@ -3,12 +3,12 @@
     {
       "id": 1,
       "title": "Extraer estilo de list en componente",
-      "list": "todo"
+      "list": "doing"
     },
     {
       "id": 2,
       "title": "Comunicar app con backend simulado",
-      "list": "todo"
+      "list": "done"
     },
     {
       "id": 3,
@@ -16,43 +16,185 @@
       "list": "todo"
     },
     {
-      "id": 4,
-      "title": "Gestión de estado con Redux",
-      "list": "doing"
-    },
-    {
       "id": 5,
       "title": "Slice board con varias lists de tasks",
-      "list": "doing"
+      "list": "todo"
     },
     {
       "id": 6,
       "title": "Componentes para mostrar tasks",
-      "list": "done"
+      "list": "doing"
     },
     {
       "id": 7,
       "title": "Acciones para añadir y eliminar tasks",
-      "list": "done"
+      "list": "doing"
     },
     {
       "id": 8,
       "title": "Componente Botón independiente",
-      "list": "done"
+      "list": "doing"
+    },
+    {
+      "title": "amazing",
+      "list": "D8mw0Bs",
+      "id": 9
+    },
+    {
+      "title": "no problem",
+      "list": "i33dOAR",
+      "id": 10
+    },
+    {
+      "title": "sdfsfwasfe",
+      "list": "uVK3uSG",
+      "id": 11
+    },
+    {
+      "title": "rc34543",
+      "list": "uVK3uSG",
+      "id": 12
+    },
+    {
+      "title": "43vtv4ct3",
+      "list": "uVK3uSG",
+      "id": 13
+    },
+    {
+      "title": "c5tv345tyvb4y",
+      "list": "uVK3uSG",
+      "id": 14
+    },
+    {
+      "title": "b3b54v3",
+      "list": "uVK3uSG",
+      "id": 15
+    },
+    {
+      "title": "cr234",
+      "list": "uVK3uSG",
+      "id": 16
+    },
+    {
+      "title": "242",
+      "list": "uVK3uSG",
+      "id": 17
+    },
+    {
+      "title": "4523v56v45tyer",
+      "list": "uVK3uSG",
+      "id": 18
+    },
+    {
+      "title": "gvwete",
+      "list": "uVK3uSG",
+      "id": 19
+    },
+    {
+      "title": "wertrw6t453",
+      "list": "uVK3uSG",
+      "id": 20
+    },
+    {
+      "title": "rgh45yh23",
+      "list": "HhnWGUf",
+      "id": 21
     }
   ],
-  "board": [
+  "lists": [
     {
       "id": "todo",
-      "name": "Pendiente"
+      "name": "Pendiente",
+      "order": 1,
+      "board": "a"
     },
     {
       "id": "doing",
-      "name": "En proceso"
+      "name": "En proceso",
+      "order": 2,
+      "board": "a"
     },
     {
       "id": "done",
-      "name": "Completado"
+      "name": "Completado",
+      "order": 3,
+      "board": "a"
+    },
+    {
+      "name": "a",
+      "id": "8Ra6dac"
+    },
+    {
+      "name": "yes",
+      "board": "b",
+      "order": 1,
+      "id": "D8mw0Bs"
+    },
+    {
+      "name": "hala",
+      "board": "b",
+      "order": 2,
+      "id": "i33dOAR"
+    },
+    {
+      "name": "elfnmdalwkjrbfga.",
+      "board": "l50FmXA",
+      "order": 1,
+      "id": "uVK3uSG"
+    },
+    {
+      "name": "hr32io9rg29",
+      "board": "l50FmXA",
+      "order": 2,
+      "id": "oQEH-J9"
+    },
+    {
+      "name": "bcsjkhdvfc",
+      "board": "l50FmXA",
+      "order": 3,
+      "id": "8dQTMWt"
+    },
+    {
+      "name": "83y29rb",
+      "board": "l50FmXA",
+      "order": 4,
+      "id": "33ntQdD"
+    },
+    {
+      "name": "grg4w5gh3",
+      "board": "d05hlQy",
+      "order": 1,
+      "id": "HhnWGUf"
+    }
+  ],
+  "boards": [
+    {
+      "id": "a",
+      "name": "Proyecto Kanpus en React/Redux",
+      "account": "alice"
+    },
+    {
+      "id": "b",
+      "name": "Tareas de curso de Deep Learning",
+      "account": "alice"
+    }
+  ],
+  "accounts": [
+    {
+      "id": "alice",
+      "email": "alice@example.org",
+      "password": "fauxpassword",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4NDc2NDY5LTQ3NDczOTEiLCJuYW1lIjoiQWxpY2UiLCJpYXQiOjE3MTY5MzkwMjJ9.0l41RnBend6gaaBq6AR9hHQr7rZN9kwHDa-Ys8AJoCA"
+    },
+    {
+      "id": "alice2",
+      "password": "efugwo37",
+      "email": "fwu@fgbe.ciedwg"
+    },
+    {
+      "id": "david",
+      "password": "J59B7ceh52T5BTC",
+      "email": "david@deivi.ch"
     }
   ]
 }

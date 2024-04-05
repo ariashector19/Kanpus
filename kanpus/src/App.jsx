@@ -1,53 +1,77 @@
-import { AddTask } from "./components/addTask/AddTask";
-import { Button } from "./components/button/Button";
-import { Header } from "./components/header/Header";
-import { TaskList } from "./components/taskList/TaskList";
-import { createContext, useState, useContext } from "react";
-import { ThemeContext, themes } from "./utils/themeContext/Theme.js";
-import { FormNewUser } from "./components/formNewUser/FormNewUser.jsx";
-import { DropdownComponent } from "./components/dropdown/Dropdown.jsx";
-import { Board } from "./components/board/Board";
-import { useSelector } from "react-redux";
+import ui from "./utils/ui";
+import { MenuBar } from "./utils/ui";
+import {
+  NavLink,
+  Outlet,
+  useNavigation,
+  useRouteLoaderData,
+} from "react-router-dom";
 
-function App() {
-  // en el componente App
-  // const [tasks, setTasks] = useState([
-  //   {
-  //     title: "Aprender componentes de React",
-  //     completed: false,
-  //   },
-  //   {
-  //     title: "Completar las prácticas del módulo 1",
-  //     completed: true,
-  //   },
-  //   {
-  //     title: "Realizar la autoevaluación",
-  //     completed: false,
-  //   },
-  // ]);
-
-  // const addTask = (title) => {
-  //   const newTask = { title, completed: false };
-  //   setTasks([...tasks, newTask]);
-  // };
-
-  const [theme, setTheme] = useState("light");
+const App = () => {
+  const navigation = useNavigation();
+  const user = useRouteLoaderData("sesion")?.user;
 
   return (
-    <ThemeContext.Provider value={themes[theme]}>
-      <div className="App">
-        <h1>Kanpus</h1>
-        {/* <Header /> */}
-        <Board />
-        {theme == "light" ? (
-          <Button onClick={() => setTheme("dark")}>Activar tema oscuro</Button>
-        ) : (
-          <Button onClick={() => setTheme("light")}>Activar tema claro</Button>
-        )}
+    <>
+      <MenuBar
+        left={
+          <>
+            <span>Kanpus</span>
+            {user && (
+              <NavLink
+                to="/boards"
+                end
+                className={({ isActive, isPending }) =>
+                  `${ui.option} ${
+                    isActive ? ui.active : isPending ? ui.pending : ""
+                  }`
+                }
+              >
+                Mis boards
+              </NavLink>
+            )}
+          </>
+        }
+        right={
+          user ? (
+            <NavLink to="/account/logout" className={ui.option}>
+              Cerrar sesión
+            </NavLink>
+          ) : (
+            <>
+              <NavLink
+                to="/account/login"
+                className={({ isActive, isPending }) =>
+                  `${ui.option} ${
+                    isActive ? ui.active : isPending ? ui.pending : ""
+                  }`
+                }
+              >
+                Iniciar sesión
+              </NavLink>
+              <NavLink
+                to="/account/register"
+                className={({ isActive, isPending }) =>
+                  `${ui.option} ${
+                    isActive ? ui.active : isPending ? ui.pending : ""
+                  }`
+                }
+              >
+                Crear nueva account
+              </NavLink>
+            </>
+          )
+        }
+      />
+      <div
+        className={
+          navigation.state !== "idle" ? "animate-pulse saturate-50" : ""
+        }
+      >
+        <Outlet />
       </div>
-      <DropdownComponent />
-    </ThemeContext.Provider>
+    </>
   );
-}
+};
 
 export default App;

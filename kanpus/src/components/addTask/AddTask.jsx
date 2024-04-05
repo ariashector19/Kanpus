@@ -1,27 +1,29 @@
 import { useState } from "react";
 import "./addTask.css";
 import { useDispatch } from "react-redux";
-import { createdTask } from "../../slices/tasksSlice";
+import { useCreateTaskMutation } from "../../slices/apiSlice";
 
-export const AddTask = ({ idList }) => {
+export const AddTask = ({ listId }) => {
   const [newTitle, setNewTitle] = useState("");
-  const dispatch = useDispatch();
-  // ...
-  const hanldeSubmit = (event) => {
-    event.preventDefault();
-    console.log("Nueva tarea", newTitle, idList);
-    dispatch(created(newTitle, idList));
+  const [createTask, result] = useCreateTaskMutation();
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    createTask({ title: newTitle, list: listId });
     setNewTitle("");
   };
+
   return (
-    <form onSubmit={hanldeSubmit} className="form">
-      <input
-        type="text"
-        name="titulo"
-        placeholder="Nueva tarea"
-        value={newTitle}
-        onChange={(event) => setNewTitle(event.target.value)}
+    <form onSubmit={handleSubmit}>
+      <Fieldutton
+        input={{
+          type: "text",
+          name: "title",
+          placeholder: "Nueva tarea",
+          onChange: (event) => setNewTitle(event.target.value),
+          value: newTitle,
+        }}
+        boton={{ type: "submit", children: "Crear" }}
       />
     </form>
   );

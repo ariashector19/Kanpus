@@ -59,7 +59,7 @@ const Register = () => {
               <p className="pt-3 text-center">
                 ¿Ya tienes una cuenta?{" "}
                 <Link
-                  to="../acceder"
+                  to="../login"
                   className="text-cyan-800 dark:text-cyan-300"
                 >
                   Inicia sesión

@@ -19,7 +19,7 @@ export const action = async ({ request }) => {
   return json({ failedLoging: true });
 };
 
-const FormularioRegistro = () => {
+const Register = () => {
   const failedLoging = useActionData()?.failedLoging;
   const [user, setUsuario] = useInput("");
   const [email, setEmail] = useInput("");
@@ -149,4 +149,4 @@ const FormularioRegistro = () => {
   );
 };
 
-export default FormularioRegistro;
+export default Register;

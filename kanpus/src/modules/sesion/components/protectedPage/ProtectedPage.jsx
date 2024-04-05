@@ -7,7 +7,7 @@ export const loader = (params) => {
   if (user) {
     return { user };
   } else {
-    return redirect("/cuenta/acceder");
+    return redirect("/account/login");
   }
 };
 

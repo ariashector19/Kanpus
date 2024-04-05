@@ -1,18 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
+export const API_BASEURL = "https://kanpus.vercel.app/api/";
+
 const apiSlice = createApi({
   reducerPath: "api",
-  baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:3000/",
-    prepareHeaders: (headers, { getState }) => {
-      const jwt = getState().auth.token;
-      if (jwt) {
-        headers.set("Authorization", `Bearer ${jwt}`);
-      }
-      return headers;
-    },
-  }),
+  baseQuery: fetchBaseQuery({ baseUrl: API_BASEURL }),
   tagTypes: ["Board", "List"],
   endpoints: (builder) => ({
     getBoards: builder.query({

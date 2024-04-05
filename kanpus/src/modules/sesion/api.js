@@ -1,32 +1,31 @@
+import { API_BASEURL } from "../../slices/apiSlice";
+
 export default {
   login: async (user, password) => {
-    const match = await fetch(
-      `http://localhost:3000/accounts/?id=${user}&pass=${password}`
+    const coincidencias = await fetch(
+      `${API_BASEURL}accounts/?id=${user}&pass=${password}`
     ).then((r) => r.json());
 
     // simular latencia de la petición
     await new Promise((callback) => setTimeout(callback, 500));
 
-    if (match.length > 0) {
-      const userData = match[0];
+    if (coincidencias.length > 0) {
+      const userData = coincidencias[0];
       localStorage.setItem(
         "sesion",
         JSON.stringify({
-          logged: true,
-          userAccount: user,
+          sesionIniciada: true,
+          cuentaUsuario: user,
           token: userData.token,
         })
       );
-      return {
-        userAccount: user,
-        token: userData.token,
-      };
+      return true;
     }
 
-    return null;
+    return false;
   },
   signup: async (user, password, email) => {
-    const result = await fetch("http://localhost:3000/accounts/", {
+    const result = await fetch(`${API_BASEURL}accounts/`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -41,9 +40,9 @@ export default {
   },
   logout: () =>
     new Promise((callback) => {
-      localStorage.setItem("sesion", JSON.stringify({ logged: false }));
+      localStorage.setItem("sesion", JSON.stringify({ sesionIniciada: false }));
       // simular latencia de la petición
       setTimeout(callback, 500);
     }),
-  getUser: () => JSON.parse(localStorage.getItem("sesion"))?.userAccount,
+  getUser: () => JSON.parse(localStorage.getItem("sesion"))?.cuentaUsuario,
 };
